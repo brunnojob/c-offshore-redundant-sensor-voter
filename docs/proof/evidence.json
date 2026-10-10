@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "repository": "brunnojob/c-offshore-redundant-sensor-voter",
-  "source_commit": "da385cfcb226c30fa4316d9cf558fbf01a082b59",
-  "generated_at": "2026-10-10T02:36:55.381396+00:00",
-  "run_url": "https://github.com/brunnojob/c-offshore-redundant-sensor-voter/actions/runs/38017602427",
+  "source_commit": "b42914013852d1ffdf19fc90cbe8f7ba74a539c4",
+  "generated_at": "2026-10-10T02:45:11.390378+00:00",
+  "run_url": "https://github.com/brunnojob/c-offshore-redundant-sensor-voter/actions/runs/38018099989",
   "inputs_sha256": {
     ".proof/scenarios.json": "b5300b9f361da27e6cb3510f25bf383795e79a7c94d8e2dddeb1833650a4f215",
     "examples/input.txt": "2754486a5782975b8ba3961f5524c1a233125a14a9e01f0ff97bc9bd13bf16e4"
@@ -23,7 +23,7 @@
       "exit": 0,
       "expected_exit": 0,
       "passed": true,
-      "seconds": 1.053,
+      "seconds": 0.753,
       "output": "cc -std=c17 -Wall -Wextra -Werror -pedantic -O2 src/main.c -lm -o app\n./app --self-test\nisolation, recovery and quorum tests passed\ntime=0.000 valid=1 estimate=10.0500 isolated=000\ntime=1.000 valid=1 estimate=10.0500 isolated=000\ntime=2.000 valid=1 estimate=10.0500 isolated=001\n",
       "output_sha256": "fc6c97c561589a29803f3777e3f7042d6ff8ee0db8ac2f6414bfa69d354cad45"
     },
