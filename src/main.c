@@ -18,6 +18,7 @@ static size_t fields(char *line, char **out, size_t capacity) {
     char *p = line;
     while (*p) {
         if (count == capacity) fail("too many fields");
+        if (*p == ',') fail("empty field");
         out[count++] = p;
         char *separator = strchr(p, ',');
         if (!separator) break;
@@ -43,6 +44,7 @@ static void vote(Channel *channels, const double *values, const double *ages, do
     *valid = usable >= 2; *estimate = usable ? sum / usable : 0;
 }
 int main(int argc, char **argv) {
+    if (argc > 1 && !(argc == 2 && !strcmp(argv[1], "--self-test"))) fail("unsupported command arguments");
     if (argc == 2 && !strcmp(argv[1], "--self-test")) {
         Channel c[3] = {0}; double v[] = {10, 10.1, 50}, age[] = {0, 0, 0}, out; int valid;
         for (int i = 0; i < 3; i++) vote(c, v, age, 0.5, &out, &valid);
@@ -52,6 +54,7 @@ int main(int argc, char **argv) {
     }
     Channel channels[3] = {0}; char line[512]; double last = -1; size_t rows = 0;
     while (fgets(line, sizeof line, stdin)) {
+        if (strlen(line) == sizeof line - 1 && line[sizeof line - 2] != '\n') fail("input record too large");
         char *f[8]; if (fields(line, f, 8) != 8) fail("expected eight columns");
         double t = number(f[0]), v[3], ages[3], tolerance = number(f[7]);
         if (t <= last || tolerance <= 0) fail("invalid time or tolerance");
