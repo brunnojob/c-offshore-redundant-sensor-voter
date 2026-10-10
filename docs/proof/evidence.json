@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "repository": "brunnojob/c-offshore-redundant-sensor-voter",
+  "source_commit": "da385cfcb226c30fa4316d9cf558fbf01a082b59",
+  "generated_at": "2026-10-10T02:36:55.381396+00:00",
+  "run_url": "https://github.com/brunnojob/c-offshore-redundant-sensor-voter/actions/runs/38017602427",
+  "inputs_sha256": {
+    ".proof/scenarios.json": "b5300b9f361da27e6cb3510f25bf383795e79a7c94d8e2dddeb1833650a4f215",
+    "examples/input.txt": "2754486a5782975b8ba3961f5524c1a233125a14a9e01f0ff97bc9bd13bf16e4"
+  },
+  "cases": [
+    {
+      "display": false,
+      "name": "make test && ./app < examples/input.txt",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "make test && ./app < examples/input.txt"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 1.053,
+      "output": "cc -std=c17 -Wall -Wextra -Werror -pedantic -O2 src/main.c -lm -o app\n./app --self-test\nisolation, recovery and quorum tests passed\ntime=0.000 valid=1 estimate=10.0500 isolated=000\ntime=1.000 valid=1 estimate=10.0500 isolated=000\ntime=2.000 valid=1 estimate=10.0500 isolated=001\n",
+      "output_sha256": "fc6c97c561589a29803f3777e3f7042d6ff8ee0db8ac2f6414bfa69d354cad45"
+    },
+    {
+      "display": true,
+      "name": "Application demonstration with checked output",
+      "argv": [
+        "./app"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 0.051,
+      "output": "time=0.000 valid=1 estimate=10.0500 isolated=000\ntime=1.000 valid=1 estimate=10.0500 isolated=000\ntime=2.000 valid=1 estimate=10.0500 isolated=001\n",
+      "output_sha256": "8d47ccc8de4718a3a3ca00cd63e3ae4d33299e5b85d6baa5baca2ef132210e55"
+    },
+    {
+      "display": true,
+      "name": "Reject an empty capture",
+      "argv": [
+        "./app"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.051,
+      "output": "missing input\n",
+      "output_sha256": "e108e9abb244623e01f96efedd4006bbb9cdf4b61840b948d6bf644ffe78bede"
+    },
+    {
+      "display": true,
+      "name": "Reject malformed input",
+      "argv": [
+        "./app"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.051,
+      "output": "expected eight columns\n",
+      "output_sha256": "739d3b8786800b13252889b0d8d16d55974e7677e61539de0cb30be141991779"
+    },
+    {
+      "display": true,
+      "name": "Reject unsupported invocation",
+      "argv": [
+        "./app",
+        "--unsupported"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.051,
+      "output": "unsupported command arguments\n",
+      "output_sha256": "8671e08a3718f115decd7eb1e7970691e3a2180c5a869d0e9ccd54e6d4fa8a80"
+    },
+    {
+      "display": true,
+      "name": "Reject an oversized input record",
+      "argv": [
+        "./app"
+      ],
+      "exit": 2,
+      "expected_exit": 2,
+      "passed": true,
+      "seconds": 0.051,
+      "output": "input record too large\n",
+      "output_sha256": "d0f1bb9ab1c99d914df3de66c3268650fd8fcb942b2d0f116490dc6c41e6f800"
+    }
+  ],
+  "passed": true
+}

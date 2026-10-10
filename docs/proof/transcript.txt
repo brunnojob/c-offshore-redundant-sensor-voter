@@ -1,0 +1,24 @@
+$ bash -e -o pipefail -c make test && ./app < examples/input.txt
+cc -std=c17 -Wall -Wextra -Werror -pedantic -O2 src/main.c -lm -o app
+./app --self-test
+isolation, recovery and quorum tests passed
+time=0.000 valid=1 estimate=10.0500 isolated=000
+time=1.000 valid=1 estimate=10.0500 isolated=000
+time=2.000 valid=1 estimate=10.0500 isolated=001
+
+$ ./app
+time=0.000 valid=1 estimate=10.0500 isolated=000
+time=1.000 valid=1 estimate=10.0500 isolated=000
+time=2.000 valid=1 estimate=10.0500 isolated=001
+
+$ ./app
+missing input
+
+$ ./app
+expected eight columns
+
+$ ./app --unsupported
+unsupported command arguments
+
+$ ./app
+input record too large
