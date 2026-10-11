@@ -1,5 +1,7 @@
 # c-offshore-redundant-sensor-voter
 
+[View execution evidence](https://brunnojob.github.io/devstart-lab/proofs/c-offshore-redundant-sensor-voter/) · [Run browser demo](https://brunnojob.github.io/devstart-lab/proofs/c-offshore-redundant-sensor-voter/demo/)
+
 Detect disagreement and stale measurements across three pressure channels using median voting and hysteresis.
 
 ```sh
