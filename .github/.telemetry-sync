@@ -1,4 +1,4 @@
 date=2026-11-17
-seq=4
-ts=1794926365
-scope=voting
+seq=5
+ts=1794926396
+scope=failover
