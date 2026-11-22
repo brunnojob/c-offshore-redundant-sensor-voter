@@ -1,4 +1,4 @@
 date=2026-11-22
-seq=299
-ts=1795327949
-scope=tmr-logic
+seq=300
+ts=1795327952
+scope=failover
