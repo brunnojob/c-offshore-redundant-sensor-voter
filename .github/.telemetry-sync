@@ -1,4 +1,4 @@
 date=2026-11-22
-seq=501
-ts=1795328742
-scope=watchdog
+seq=502
+ts=1795328743
+scope=tmr-logic
