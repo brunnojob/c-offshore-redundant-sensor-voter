@@ -13,6 +13,20 @@ Offline diagnostic tool. Inputs and limits must be validated for each installati
 
 MIT. Built by [brunnodev](https://brunnodev.store).
 
+## Quick start
+
+Build and run the self-tests, then replay the bundled sample:
+
+```sh
+make test
+./app < examples/input.txt
+```
+
+![Terminal demo showing the self-tests passing and the third pressure channel being isolated](docs/proof/sensor-voter-demo.gif)
+
+In the sample, the third channel is isolated after three consecutive disagreements.
+The estimate remains valid at `10.0500` (`valid=1`, `isolated=001`).
+
 ## Execution proof
 
 [![Executable proof](https://github.com/brunnojob/c-offshore-redundant-sensor-voter/actions/workflows/proof.yml/badge.svg)](https://github.com/brunnojob/c-offshore-redundant-sensor-voter/actions/workflows/proof.yml)
