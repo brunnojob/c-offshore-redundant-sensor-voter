@@ -1,4 +1,4 @@
 date=2026-11-22
-seq=101
-ts=1795327179
-scope=failover
+seq=102
+ts=1795327187
+scope=voting
