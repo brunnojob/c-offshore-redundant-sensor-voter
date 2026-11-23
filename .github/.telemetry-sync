@@ -1,4 +1,4 @@
 date=2026-11-23
-seq=104
-ts=1795454155
-scope=watchdog
+seq=105
+ts=1795454162
+scope=failover
