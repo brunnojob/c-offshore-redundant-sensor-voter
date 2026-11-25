@@ -1,4 +1,4 @@
 date=2026-11-25
-seq=174
-ts=1795583519
-scope=failover
+seq=175
+ts=1795583520
+scope=watchdog
